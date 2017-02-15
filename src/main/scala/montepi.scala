@@ -6,11 +6,11 @@ object montepi {
     // initialise spark session (running in "local" mode)
     val sparkSession = SparkSession.builder
       .master("local")
-      .appName("Hello World")
+      .appName("monte pi")
        .getOrCreate()
 
-    val sc = sparkSession.sparkContext
     val NUM_SAMPLES = 1000000000
+    val sc = sparkSession.sparkContext
 
     val count = sc.parallelize(1 to NUM_SAMPLES).map{i =>
     val x = Math.random()
